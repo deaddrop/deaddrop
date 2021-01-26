@@ -55,17 +55,19 @@
         </ul>
       {% endif %}
 
-      <!-- Delete confirmation modal -->
+      <!--First delete confirmation modal -->
       {% with %}
         {% set modal_data = {
                               "modal_id": "delete-confirmation-modal",
-                              "modal_header": gettext('Delete Confirmation'),
-                              "modal_body": gettext('Are you sure you want to delete the selected collections?'),
-                              "modal_warning": gettext('Warning: If you do this, all files for the selected sources will be unrecoverable, and the sources will no longer be able to log in using their previous codename.'),
+                              "modal_header": "",
+                              "modal_body": gettext('What would you like to delete?'),
+                              "modal_delete_files": True,
+                              "delete_files_btn_text": gettext('Messages &amp; Files'),
+                              "modal_body": gettext('What would you like to delete?'),
                               "cancel_id": "cancel-collections-deletions",
                               "submit_id": "delete-collections",
                               "submit_btn_type": "danger",
-                              "submit_btn_text": gettext('Delete')
+                              "submit_btn_text": gettext('Source Accounts')
                             }
         %}
         {% include '_confirmation_modal.html' %}
